@@ -13,6 +13,8 @@ println("Question 3")
 
 def bookprice(x:Int):Double=x*24.95
 def discount(amount:Double):Double = amount*0.4
-def shipping(x:Int):Double=3*x + (x-50)*0.75
+def shipping(x:Int):Double=if(x>50){3*50 + (x-50)*0.75}
+else{3*x}
 
-bookprice(60)-discount(bookprice(60))+shipping(60)
+def totalcost(x:Int):Double = bookprice(x)-discount(bookprice(x))+shipping(x)
+totalcost(60)
